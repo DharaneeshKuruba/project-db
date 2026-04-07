@@ -32,3 +32,16 @@ def create_review(data: ReviewCreate, db: Session = Depends(get_db)):
     db.add(new_review)
     db.commit()
     db.refresh(new_review)
+
+@app.get("/reviews/{hotel_id}")
+def get_reviews(hotel_id: int, db: Session = Depends(get_db)):
+    reviews = db.query(models.Review).filter(
+        models.Review.hotel_id == hotel_id
+    ).all()
+
+    return reviews
+
+
+@app.get("/hotels")
+def get_hotels(db: Session = Depends(get_db)):
+    return db.query(models.Hotel).all()
