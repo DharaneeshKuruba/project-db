@@ -1,10 +1,10 @@
 import streamlit as st
 
-# Import your existing pages
+st.set_page_config(page_title="Hotel Review App", layout="centered")
+
+# Import pages only after configuring Streamlit page settings.
 import post_review
 import view_reviews
-
-st.set_page_config(page_title="Hotel Review App", layout="centered")
 
 st.title("🏨 Hotel Review System")
 

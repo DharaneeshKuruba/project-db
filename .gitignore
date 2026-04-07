@@ -1,1 +1,8 @@
 try/
+frontend/_pycache_/
+backend/_pycache_/
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.log
